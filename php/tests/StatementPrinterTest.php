@@ -7,28 +7,28 @@ namespace Tests;
 use ApprovalTests\Approvals;
 use Error;
 use PHPUnit\Framework\TestCase;
-use Theatrical\Invoice;
-use Theatrical\Performance;
-use Theatrical\Play;
-use Theatrical\StatementPrinter;
+use Theatrical\base.Invoice;
+use Theatrical\base.Performance;
+use Theatrical\base.Play;
+use Theatrical\base.StatementPrinter;
 
 final class StatementPrinterTest extends TestCase
 {
     public function testCanPrintInvoice(): void
     {
         $plays = [
-            'hamlet' => new Play('Hamlet', 'tragedy'),
-            'as-like' => new Play('As You Like It', 'comedy'),
-            'othello' => new Play('Othello', 'tragedy'),
+            'hamlet' => new base.Play('Hamlet', 'tragedy'),
+            'as-like' => new base.Play('As You Like It', 'comedy'),
+            'othello' => new base.Play('Othello', 'tragedy'),
         ];
 
         $performances = [
-            new Performance('hamlet', 55),
-            new Performance('as-like', 35),
-            new Performance('othello', 40),
+            new base.Performance('hamlet', 55),
+            new base.Performance('as-like', 35),
+            new base.Performance('othello', 40),
         ];
-        $invoice = new Invoice('BigCo', $performances);
-        $statementPrinter = new StatementPrinter();
+        $invoice = new base.Invoice('BigCo', $performances);
+        $statementPrinter = new base.StatementPrinter();
         $result = $statementPrinter->print($invoice, $plays);
 
         Approvals::verifyString($result);
@@ -37,14 +37,14 @@ final class StatementPrinterTest extends TestCase
     public function testNewPlayTypes(): void
     {
         $plays = [
-            'henry-v' => new Play('Henry V', 'history'),
-            'as-like' => new Play('As You Like It', 'comedy'),
+            'henry-v' => new base.Play('Henry V', 'history'),
+            'as-like' => new base.Play('As You Like It', 'comedy'),
         ];
 
-        $performances = [new Performance('henry-v', 53), new Performance('as-like', 55)];
+        $performances = [new base.Performance('henry-v', 53), new base.Performance('as-like', 55)];
 
-        $invoice = new Invoice('BigCo', $performances);
-        $statementPrinter = new StatementPrinter();
+        $invoice = new base.Invoice('BigCo', $performances);
+        $statementPrinter = new base.StatementPrinter();
         $this->expectException(Error::class);
         $statementPrinter->print($invoice, $plays);
     }

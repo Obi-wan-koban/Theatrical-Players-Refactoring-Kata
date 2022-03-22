@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Theatrical;
 
-class Invoice
+class base.Invoice
 {
     /**
      * @var string

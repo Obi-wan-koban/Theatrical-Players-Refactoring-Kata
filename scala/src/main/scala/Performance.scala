@@ -1,1 +1,1 @@
-final case class Performance (playId: String, audience: Int)
+final case class base.Performance (playId: String, audience: Int)

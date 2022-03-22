@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Theatrical;
 
-class Performance
+class base.Performance
 {
     /**
      * @var string
@@ -17,7 +17,7 @@ class Performance
     public $audience;
 
     /**
-     * @var Play
+     * @var base.Play
      */
     public $play;
 

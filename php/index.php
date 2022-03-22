@@ -3,24 +3,24 @@
 declare(strict_types=1);
 
 use Theatrical\HtmlStatement;
-use Theatrical\Invoice;
-use Theatrical\Performance;
-use Theatrical\Play;
+use Theatrical\base.Invoice;
+use Theatrical\base.Performance;
+use Theatrical\base.Play;
 
 require __DIR__ . '/vendor/autoload.php';
 
 $plays = [
-    "hamlet" => new Play("Hamlet", "tragedy"),
-    "as-like" => new Play("As You Like It", "comedy"),
-    "othello" => new Play("Othello", "tragedy")
+    "hamlet" => new base.Play("Hamlet", "tragedy"),
+    "as-like" => new base.Play("As You Like It", "comedy"),
+    "othello" => new base.Play("Othello", "tragedy")
 ];
 
 $performances = [
-    new Performance("hamlet", 55),
-    new Performance("as-like", 35),
-    new Performance("othello", 40)
+    new base.Performance("hamlet", 55),
+    new base.Performance("as-like", 35),
+    new base.Performance("othello", 40)
 ];
-$invoice = new Invoice("BigCo", $performances);
+$invoice = new base.Invoice("BigCo", $performances);
 
 echo "<h1>Html Statement</h1>";
 

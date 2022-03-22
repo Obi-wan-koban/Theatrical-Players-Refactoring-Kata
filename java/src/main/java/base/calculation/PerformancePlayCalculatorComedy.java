@@ -1,3 +1,8 @@
+package base.calculation;
+
+import base.Performance;
+import base.Play;
+
 public class PerformancePlayCalculatorComedy extends PerformancePlayCalculator {
 
     public PerformancePlayCalculatorComedy(Play play, Performance performance) {

@@ -16,20 +16,20 @@ class StatementPrinterTests: XCTestCase {
             """
         
         let plays = [
-            "hamlet": Play(name: "Hamlet", type: "tragedy"),
-            "as-like": Play(name: "As You Like It", type: "comedy"),
-            "othello": Play(name: "Othello", type: "tragedy")
+            "hamlet": base.Play(name: "Hamlet", type: "tragedy"),
+            "as-like": base.Play(name: "As You Like It", type: "comedy"),
+            "othello": base.Play(name: "Othello", type: "tragedy")
         ]
         
-        let invoice = Invoice(
+        let invoice = base.Invoice(
             customer: "BigCo", performances: [
-                Performance(playID: "hamlet", audience: 55),
-                Performance(playID: "as-like", audience: 35),
-                Performance(playID: "othello", audience: 40)
+                base.Performance(playID: "hamlet", audience: 55),
+                base.Performance(playID: "as-like", audience: 35),
+                base.Performance(playID: "othello", audience: 40)
             ]
         )
         
-        let statementPrinter = StatementPrinter()
+        let statementPrinter = base.StatementPrinter()
         let result = try statementPrinter.print(invoice, plays)
         
         XCTAssertEqual(result, expected)
@@ -37,18 +37,18 @@ class StatementPrinterTests: XCTestCase {
     
     func test_statementWithNewPlayTypes() {
         let plays = [
-            "henry-v": Play(name: "Henry V", type: "history"),
-            "as-like": Play(name: "As You Like It", type: "pastoral")
+            "henry-v": base.Play(name: "Henry V", type: "history"),
+            "as-like": base.Play(name: "As You Like It", type: "pastoral")
         ]
         
-        let invoice = Invoice(
+        let invoice = base.Invoice(
             customer: "BigCo", performances: [
-                Performance(playID: "henry-v", audience: 53),
-                Performance(playID: "as-like", audience: 55)
+                base.Performance(playID: "henry-v", audience: 53),
+                base.Performance(playID: "as-like", audience: 55)
             ]
         )
         
-        let statementPrinter = StatementPrinter()
+        let statementPrinter = base.StatementPrinter()
         XCTAssertThrowsError(try statementPrinter.print(invoice, plays))        
     }
 }

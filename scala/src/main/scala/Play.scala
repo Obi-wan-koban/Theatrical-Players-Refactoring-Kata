@@ -1,1 +1,1 @@
-final case class Play(name: String, `type`: String)
+final case class base.Play(name: String, `type`: String)

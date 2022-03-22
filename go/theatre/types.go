@@ -1,16 +1,16 @@
 package theatre
 
-type Performance struct {
+type base.Performance struct {
 	PlayID   string
 	Audience int
 }
 
-type Play struct {
+type base.Play struct {
 	Name string
 	Type string
 }
 
-type Invoice struct {
+type base.Invoice struct {
 	Customer     string
-	Performances []Performance
+	Performances []base.Performance
 }

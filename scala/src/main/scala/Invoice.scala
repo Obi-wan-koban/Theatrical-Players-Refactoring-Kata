@@ -1,1 +1,1 @@
-final case class Invoice (customer: String, performances: List[Performance])
+final case class base.Invoice (customer: String, performances: List[base.Performance])

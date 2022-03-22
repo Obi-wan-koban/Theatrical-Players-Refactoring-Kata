@@ -1,3 +1,11 @@
+package base.factory;
+
+import base.Performance;
+import base.Play;
+import base.calculation.PerformancePlayCalculator;
+import base.calculation.PerformancePlayCalculatorComedy;
+import base.calculation.PerformancePlayCalculatorTragedy;
+
 public class PerformancePlayFactory {
 
     public PerformancePlayCalculator createPerformancePlayCalculator(Play play, Performance performance) {

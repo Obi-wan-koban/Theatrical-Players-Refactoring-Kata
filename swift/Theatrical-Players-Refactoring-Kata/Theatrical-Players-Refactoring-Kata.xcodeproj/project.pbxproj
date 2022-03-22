@@ -10,10 +10,10 @@
 		104F7D7E23282F2900665957 /* Theatrical_Players_Refactoring_Kata.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 104F7D7423282F2900665957 /* Theatrical_Players_Refactoring_Kata.framework */; };
 		104F7D8323282F2900665957 /* StatementPrinterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104F7D8223282F2900665957 /* StatementPrinterTests.swift */; };
 		104F7D8523282F2900665957 /* Theatrical_Players_Refactoring_Kata.h in Headers */ = {isa = PBXBuildFile; fileRef = 104F7D7723282F2900665957 /* Theatrical_Players_Refactoring_Kata.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		104F7D8F2328305A00665957 /* Play.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104F7D8E2328305A00665957 /* Play.swift */; };
-		104F7D91232830EF00665957 /* Performance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104F7D90232830EF00665957 /* Performance.swift */; };
-		104F7D932328312700665957 /* Invoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104F7D922328312600665957 /* Invoice.swift */; };
-		104F7D95232831E000665957 /* StatementPrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104F7D94232831E000665957 /* StatementPrinter.swift */; };
+		104F7D8F2328305A00665957 /* base.Play.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104F7D8E2328305A00665957 /* base.Play.swift */; };
+		104F7D91232830EF00665957 /* base.Performance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104F7D90232830EF00665957 /* base.Performance.swift */; };
+		104F7D932328312700665957 /* base.Invoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104F7D922328312600665957 /* base.Invoice.swift */; };
+		104F7D95232831E000665957 /* base.StatementPrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104F7D94232831E000665957 /* base.StatementPrinter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,10 +33,10 @@
 		104F7D7D23282F2900665957 /* Theatrical-Players-Refactoring-KataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Theatrical-Players-Refactoring-KataTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		104F7D8223282F2900665957 /* StatementPrinterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementPrinterTests.swift; sourceTree = "<group>"; };
 		104F7D8423282F2900665957 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		104F7D8E2328305A00665957 /* Play.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Play.swift; sourceTree = "<group>"; };
-		104F7D90232830EF00665957 /* Performance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Performance.swift; sourceTree = "<group>"; };
-		104F7D922328312600665957 /* Invoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Invoice.swift; sourceTree = "<group>"; };
-		104F7D94232831E000665957 /* StatementPrinter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementPrinter.swift; sourceTree = "<group>"; };
+		104F7D8E2328305A00665957 /* base.Play.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = base.Play.swift; sourceTree = "<group>"; };
+		104F7D90232830EF00665957 /* base.Performance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = base.Performance.swift; sourceTree = "<group>"; };
+		104F7D922328312600665957 /* base.Invoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = base.Invoice.swift; sourceTree = "<group>"; };
+		104F7D94232831E000665957 /* base.StatementPrinter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = base.StatementPrinter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +81,10 @@
 			children = (
 				104F7D7723282F2900665957 /* Theatrical_Players_Refactoring_Kata.h */,
 				104F7D7823282F2900665957 /* Info.plist */,
-				104F7D8E2328305A00665957 /* Play.swift */,
-				104F7D90232830EF00665957 /* Performance.swift */,
-				104F7D922328312600665957 /* Invoice.swift */,
-				104F7D94232831E000665957 /* StatementPrinter.swift */,
+				104F7D8E2328305A00665957 /* base.Play.swift */,
+				104F7D90232830EF00665957 /* base.Performance.swift */,
+				104F7D922328312600665957 /* base.Invoice.swift */,
+				104F7D94232831E000665957 /* base.StatementPrinter.swift */,
 			);
 			path = "Theatrical-Players-Refactoring-Kata";
 			sourceTree = "<group>";
@@ -207,10 +207,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				104F7D91232830EF00665957 /* Performance.swift in Sources */,
-				104F7D932328312700665957 /* Invoice.swift in Sources */,
-				104F7D95232831E000665957 /* StatementPrinter.swift in Sources */,
-				104F7D8F2328305A00665957 /* Play.swift in Sources */,
+				104F7D91232830EF00665957 /* base.Performance.swift in Sources */,
+				104F7D932328312700665957 /* base.Invoice.swift in Sources */,
+				104F7D95232831E000665957 /* base.StatementPrinter.swift in Sources */,
+				104F7D8F2328305A00665957 /* base.Play.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

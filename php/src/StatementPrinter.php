@@ -7,9 +7,9 @@ namespace Theatrical;
 use Error;
 use NumberFormatter;
 
-class StatementPrinter
+class base.StatementPrinter
 {
-    public function print(Invoice $invoice, array $plays): string
+    public function print(base.Invoice $invoice, array $plays): string
     {
         $totalAmount = 0;
         $volumeCredits = 0;

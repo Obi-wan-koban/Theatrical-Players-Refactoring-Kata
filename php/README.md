@@ -47,7 +47,7 @@ The project uses composer to install:
 
 ## Folders
 
-- `src` - Contains the **StatementPrinter** Class along with the setup classes. Only **StatementPrinter.php** is
+- `src` - Contains the **base.StatementPrinter** Class along with the setup classes. Only **base.StatementPrinter.php** is
     refactored. 
 - `tests` - Contains the corresponding tests. There should be no need to amend the test.
   - `approvals` - Contains the text output for the tests. There should be no need to amend.

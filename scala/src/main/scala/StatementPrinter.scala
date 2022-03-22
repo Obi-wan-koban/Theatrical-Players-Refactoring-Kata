@@ -2,8 +2,8 @@ import java.lang.System.lineSeparator
 import java.text.NumberFormat
 import java.util.Locale
 
-class StatementPrinter {
-  def print(invoice: Invoice, plays: Map[String, Play]): String = {
+class base.StatementPrinter {
+  def print(invoice: base.Invoice, plays: Map[String, base.Play]): String = {
     var totalAmount = 0
     var volumeCredits = 0
     var result = s"Statement for ${invoice.customer}$lineSeparator"

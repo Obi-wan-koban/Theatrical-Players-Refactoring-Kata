@@ -12,12 +12,12 @@ func TestPrinterPrintByApproval(t *testing.T) {
 		var in struct {
 			Plays []struct {
 				ID   string
-				Play struct {
+				base.Play struct {
 					Name string
 					Type string
 				}
 			}
-			Invoice struct {
+			base.Invoice struct {
 				Customer     string
 				Performances []struct {
 					PlayID   string
@@ -32,19 +32,19 @@ func TestPrinterPrintByApproval(t *testing.T) {
 		}
 
 		// copy test-structure to production structure. Making use of matching types.
-		plays := make(map[string]theatre.Play)
-		invoice := theatre.Invoice{
-			Customer:     in.Invoice.Customer,
-			Performances: make([]theatre.Performance, 0, len(in.Invoice.Performances)),
+		plays := make(map[string]theatre.base.Play)
+		invoice := theatre.base.Invoice{
+			Customer:     in.base.Invoice.Customer,
+			Performances: make([]theatre.base.Performance, 0, len(in.base.Invoice.Performances)),
 		}
-		for _, perf := range in.Invoice.Performances {
+		for _, perf := range in.base.Invoice.Performances {
 			invoice.Performances = append(invoice.Performances, perf)
 		}
 		for _, identifiedPlay := range in.Plays {
-			plays[identifiedPlay.ID] = identifiedPlay.Play
+			plays[identifiedPlay.ID] = identifiedPlay.base.Play
 		}
 
-		var printer theatre.StatementPrinter
+		var printer theatre.base.StatementPrinter
 		statement, err := printer.Print(invoice, plays)
 		if err != nil {
 			t.Fatalf("failed to create statement, unexpected error: %v", err)
@@ -54,19 +54,19 @@ func TestPrinterPrintByApproval(t *testing.T) {
 }
 
 func TestStatementWithNewPlayTypes(t *testing.T) {
-	plays := map[string]theatre.Play{
+	plays := map[string]theatre.base.Play{
 		"henry-v": {Name: "Henry V", Type: "history"},
 		"as-like": {Name: "As You Like It", Type: "pastoral"},
 	}
-	invoice := theatre.Invoice{
+	invoice := theatre.base.Invoice{
 		Customer: "BigCo",
-		Performances: []theatre.Performance{
+		Performances: []theatre.base.Performance{
 			{PlayID: "henry-v", Audience: 53},
 			{PlayID: "as-like", Audience: 55},
 		},
 	}
 
-	var printer theatre.StatementPrinter
+	var printer theatre.base.StatementPrinter
 	_, err := printer.Print(invoice, plays)
 	if err == nil {
 		t.Errorf("Expected an error, got none")

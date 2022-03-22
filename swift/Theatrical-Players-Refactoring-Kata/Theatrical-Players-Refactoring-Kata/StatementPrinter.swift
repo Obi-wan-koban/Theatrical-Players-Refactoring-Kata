@@ -1,5 +1,5 @@
-class StatementPrinter {
-    func print(_ invoice: Invoice, _ plays: Dictionary<String, Play>) throws -> String {
+class base.StatementPrinter {
+    func print(_ invoice: base.Invoice, _ plays: Dictionary<String, base.Play>) throws -> String {
         var totalAmount = 0
         var volumeCredits = 0
         var result = "Statement for \(invoice.customer)\n"

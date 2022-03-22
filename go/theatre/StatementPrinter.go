@@ -7,9 +7,9 @@ import (
 	"github.com/leekchan/accounting"
 )
 
-type StatementPrinter struct{}
+type base.StatementPrinter struct{}
 
-func (StatementPrinter) Print(invoice Invoice, plays map[string]Play) (string, error) {
+func (base.StatementPrinter) Print(invoice base.Invoice, plays map[string]base.Play) (string, error) {
 	totalAmount := 0
 	volumeCredits := 0
 	result := fmt.Sprintf("Statement for %s\n", invoice.Customer)

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Theatrical;
 
-class Play
+class base.Play
 {
     /**
      * @var string

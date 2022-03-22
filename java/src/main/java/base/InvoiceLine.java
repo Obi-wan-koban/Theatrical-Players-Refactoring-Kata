@@ -1,23 +1,30 @@
+package base;
+
+import base.calculation.PerformancePlayCalculator;
+import base.writer.InvoiceLineAbstractWriter;
+import base.writer.InvoiceLineDefaultWriter;
+import base.writer.InvoiceLineJsonWriter;
+
 public class InvoiceLine {
     int amount;
     int volume;
     String playName;
     int audience;
-    transient InvoiceLineWriter writer;
+    transient InvoiceLineAbstractWriter writer;
 
     public InvoiceLine(PerformancePlayCalculator calculator) {
         this.amount = calculator.calculateAmount();
         this.volume = calculator.calculateVolumeCredits();
         this.playName = calculator.getPlay().name;
         this.audience = calculator.getPerformance().audience;
-        this.writer = new InvoiceLineWriter(this);
+        this.writer = new InvoiceLineDefaultWriter(this);
     }
-    public InvoiceLine(PerformancePlayCalculator calculator, InvoiceLineWriter invoiceLineWriter) {
+    public InvoiceLine(PerformancePlayCalculator calculator, boolean jsonOutput) {
         this.amount = calculator.calculateAmount();
         this.volume = calculator.calculateVolumeCredits();
         this.playName = calculator.getPlay().name;
         this.audience = calculator.getPerformance().audience;
-        this.writer = invoiceLineWriter;
+        this.writer = jsonOutput ? new InvoiceLineJsonWriter(this) : new InvoiceLineDefaultWriter(this);
     }
 
     public int getAmount() {
@@ -52,11 +59,11 @@ public class InvoiceLine {
         this.audience = audience;
     }
 
-    public InvoiceLineWriter getWriter() {
+    public InvoiceLineAbstractWriter getWriter() {
         return writer;
     }
 
-    public void setWriter(InvoiceLineWriter writer) {
+    public void setWriter(InvoiceLineAbstractWriter writer) {
         this.writer = writer;
     }
 

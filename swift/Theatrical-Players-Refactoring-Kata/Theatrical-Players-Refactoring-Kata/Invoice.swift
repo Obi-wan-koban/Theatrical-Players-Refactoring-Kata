@@ -1,4 +1,4 @@
-struct Invoice {
+struct base.Invoice {
     let customer: String
-    let performances: [Performance]
+    let performances: [base.Performance]
 }
