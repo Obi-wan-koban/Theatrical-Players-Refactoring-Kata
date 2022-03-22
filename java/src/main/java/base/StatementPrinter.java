@@ -38,8 +38,7 @@ public class StatementPrinter {
             return invoiceLine;
         }).collect(Collectors.toList());
         String formattedTotalAmount = frmt.format(totalAmount.get() / 100);
-        InvoiceAggregate invoiceAggregate = new InvoiceAggregate(formattedTotalAmount, volumeCredits.get(), invoice.customer, invoiceLines);
-        return invoiceAggregate;
+        return new InvoiceAggregate(formattedTotalAmount, volumeCredits.get(), invoice.customer, invoiceLines);
     }
 
 
