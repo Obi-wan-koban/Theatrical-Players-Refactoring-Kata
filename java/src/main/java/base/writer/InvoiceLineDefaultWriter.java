@@ -14,7 +14,7 @@ public class InvoiceLineDefaultWriter extends InvoiceLineAbstractWriter {
 
     @Override
     public String toString() {
-        return String.format("  %s: %s (%s seats)\n", invoiceLine.getPlayName(), invoiceLine.getAmount() , invoiceLine.getAudience());
+        return String.format("  %s: %s (%s seats)\n", invoiceLine.getPlayName(), frmt.format(invoiceLine.getAmount() / 100) , invoiceLine.getAudience());
     }
 
 }
