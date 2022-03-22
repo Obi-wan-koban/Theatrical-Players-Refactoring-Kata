@@ -12,13 +12,6 @@ public class InvoiceLine {
         this.audience = calculator.getPerformance().audience;
         this.writer = new InvoiceLineWriter(this);
     }
-    public InvoiceLine(PerformancePlayCalculator calculator, InvoiceLineWriter invoiceLineWriter) {
-        this.amount = calculator.calculateAmount();
-        this.volume = calculator.calculateVolumeCredits();
-        this.playName = calculator.getPlay().name;
-        this.audience = calculator.getPerformance().audience;
-        this.writer = invoiceLineWriter;
-    }
 
     public int getAmount() {
         return amount;
