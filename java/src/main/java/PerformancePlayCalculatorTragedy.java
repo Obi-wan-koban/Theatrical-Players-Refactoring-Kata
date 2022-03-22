@@ -1,9 +1,7 @@
 public class PerformancePlayCalculatorTragedy extends PerformancePlayCalculator {
-    InvoiceLineWriter writer;
 
     public PerformancePlayCalculatorTragedy(Play play, Performance performance) {
         super(play, performance);
-        writer = new InvoiceLineWriter(this);
     }
 
     @Override
@@ -20,16 +18,4 @@ public class PerformancePlayCalculatorTragedy extends PerformancePlayCalculator 
         return Math.max(getPerformance().audience - 30, 0);
     }
 
-    public InvoiceLineWriter getWriter() {
-        return writer;
-    }
-
-    public void setWriter(InvoiceLineWriter writer) {
-        this.writer = writer;
-    }
-
-    @Override
-    public String toString() {
-        return writer.toString();
-    }
 }
