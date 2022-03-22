@@ -15,7 +15,7 @@ public class InvoiceLineSerializer implements JsonSerializer<InvoiceLine> {
         JsonObject json = new JsonObject();
         json.addProperty( "playName", src.getPlayName());
         String formattedAmount = InvoiceLineDefaultWriter.frmt.format(src.getAmount() / 100);
-        json.addProperty("amount", "formattedAmount");
+        json.addProperty("amount", formattedAmount);
         json.addProperty("audience", src.getAudience());
         json.addProperty( "volumeCredits", src.getVolume());
         return json;

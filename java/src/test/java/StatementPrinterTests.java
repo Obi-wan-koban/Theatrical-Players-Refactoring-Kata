@@ -61,7 +61,7 @@ public class StatementPrinterTests {
         StatementPrinter statementPrinter = new StatementPrinter();
         var result = statementPrinter.printJson(invoice, plays);
 
-        String expected = "{\"totalAmount\":\"$1,730.00\",\"volumeCredits\":47,\"customerName\":\"BigCo\",\"invoiceLines\":[{\"amount\":65000,\"volume\":25,\"playName\":\"Hamlet\",\"audience\":55},{\"amount\":58000,\"volume\":12,\"playName\":\"As You Like It\",\"audience\":35},{\"amount\":50000,\"volume\":10,\"playName\":\"Othello\",\"audience\":40}]}";
+        String expected = "{\"totalAmount\":\"$1,730.00\",\"volumeCredits\":47,\"customerName\":\"BigCo\",\"invoiceLines\":[{\"playName\":\"Hamlet\",\"amount\":\"$650.00\",\"audience\":55,\"volumeCredits\":25},{\"playName\":\"As You Like It\",\"amount\":\"$580.00\",\"audience\":35,\"volumeCredits\":12},{\"playName\":\"Othello\",\"amount\":\"$500.00\",\"audience\":40,\"volumeCredits\":10}]}";
         Assertions.assertEquals(expected, result);
     }
     @Test

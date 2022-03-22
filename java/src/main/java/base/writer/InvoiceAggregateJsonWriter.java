@@ -1,7 +1,9 @@
 package base.writer;
 
 import base.InvoiceAggregate;
-import com.google.gson.Gson;
+import base.InvoiceLine;
+import base.serializer.InvoiceLineSerializer;
+import com.google.gson.GsonBuilder;
 
 public class InvoiceAggregateJsonWriter extends InvoiceAggregateAbstractWriter{
 
@@ -11,7 +13,7 @@ public class InvoiceAggregateJsonWriter extends InvoiceAggregateAbstractWriter{
 
     @Override
     public String toString() {
-        return new Gson().toJson(invoiceAggregate);
+        return new GsonBuilder().registerTypeAdapter(InvoiceLine.class, new InvoiceLineSerializer()).create().toJson(invoiceAggregate);
     }
 
 }
